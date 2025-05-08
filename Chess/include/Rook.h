@@ -18,7 +18,7 @@ public:
      * @param toCol
      * @return true if the movement is horizontal.
      */
-    bool isValidMove( int toRow, int toCol) override;
+    bool isValidMove( int toRow, int toCol)const override;
 };
 
 

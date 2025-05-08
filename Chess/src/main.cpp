@@ -1,6 +1,7 @@
-// Chess 
+// Chess
 #include "../include/Chess.h"
 #include "../include/Board.h"
+#include "MyExceptions.h"
 
 int main()
 {
@@ -8,8 +9,26 @@ int main()
 //	string board = "##########K###############################R#############r#rk####";
     Board b(board);
 	Chess a(board);
-	int codeResponse = 0;
-	string res = a.getInput();
+    int depth;
+    int codeResponse = 0;
+    std::cout << "Enter AI depth: ";
+    if (!(std::cin >> depth)) {
+        std::cerr << "Invalid input for depth.\n";
+        return 1;
+    }
+    try{
+
+        auto suggestions = b.getTopMoves(3,depth);
+        std::cout << "Top 3 suggested moves:\n";
+        for (const auto& move : suggestions) {
+            std::cout << move<< "\n";
+        }
+    }catch (const MyExceptions& e){
+        std::cerr << "\033[1;31m" << e.what() << "\033[0m\n";
+    }
+
+
+    string res = a.getInput();
 	while (res != "exit")
 	{
 		/*
@@ -29,7 +48,17 @@ int main()
 		/**/
 		{ // put your code here instead that code
             codeResponse = b.checkMove(res);
-            printf("%d",codeResponse);
+            if (codeResponse == 41 || codeResponse == 42) {
+                try{
+                    auto suggestions = b.getTopMoves(3,depth);
+                    std::cout << "Top 3 suggested moves:\n";
+                    for (const auto& move : suggestions) {
+                        std::cout << move<< "\n";
+                    }
+                }catch (const MyExceptions& e){
+                    std::cerr << "\033[1;31m" << e.what() << "\033[0m\n";
+                }
+            }
 
 		}
 		/**/
@@ -38,6 +67,9 @@ int main()
 		res = a.getInput();
 	}
 
-	cout << endl << "Exiting " << endl; 
+	cout << endl << "Exiting " << endl;
 	return 0;
 }
+
+
+

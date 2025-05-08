@@ -16,7 +16,7 @@ public:
  * @param toCol
  * @return if the move was valid
  */
-    bool isValidMove( int toRow, int toCol) override;
+    bool isValidMove( int toRow, int toCol) const override;
 
 };
 

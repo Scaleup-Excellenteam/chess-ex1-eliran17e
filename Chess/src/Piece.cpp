@@ -25,7 +25,9 @@ Piece& Piece::operator=(const Piece& other) {
 
     return *this;
 }
-
+int Piece::getValue() const {
+    return value;
+}
 
 
 

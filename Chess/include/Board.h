@@ -7,7 +7,23 @@
 #include "Piece.h"
 #include <vector>
 #include "Pawn.h"
+#include <ostream>
 
+struct Move {
+    std::string notation;
+    int score = 0;
+    int fromRow, fromCol;
+    int toRow, toCol;
+    int operator*() const { return score; }
+    bool operator<(const Move& other) const {
+        return score < other.score;
+    }
+
+    bool operator>(const Move& other) const {
+        return score > other.score;
+    }
+};
+std::ostream& operator<<(std::ostream& os, const Move& m);
 /**
  * The Board class represents a chessboard and manages the game state,
  * including move validation, turn management,
@@ -16,6 +32,7 @@
 
 class Board {
 private:
+    std::vector<struct Move> currentMoves;
     std::vector<std::vector<Piece*>> chessBoard;
     bool whiteTurn;
 
@@ -62,6 +79,51 @@ private:
     * @return the king current position
     */
     std::pair<int, int> findKing(bool isWhite);
+    /**
+     * Evaluate a chess move and giving it a score.
+     * @param move
+     * @param depth
+     * @return
+     */
+    double evaluateMove(const Move& move, int depth);
+    /**
+     * Checks if a square is protected by another piece
+     * @param row
+     * @param col
+     * @param byWhite
+     * @return
+     */
+    bool isSquareProtected(int row, int col, bool byWhite);
+    /**
+     * Evaluate Board position and giving score
+     * if pieces moving from their starting squares
+     * @param isWhite
+     * @return
+     */
+    double evaluateBoardPosition(bool isWhite);
+    /**
+     * GameStage is a function that checks what part of the game we at now
+     * for better suggestions in TopMoves (not used yet)
+     * @return
+     */
+    int getGameStage();
+    /**
+     *  Checks the king safety and giving score
+     * @param row
+     * @param col
+     * @param isWhite
+     * @param gameStage
+     * @return
+     */
+    double evaluateKingSafety(int row, int col, bool isWhite, int gameStage);
+    /**
+     * Handles a promotion .
+     * @param row
+     * @param col
+     * @param isWhite
+     */
+    void handlePromotion(int row, int col, bool isWhite);
+    void dumpBoard();
 
 public:
     /**
@@ -99,6 +161,24 @@ public:
  * @param toCol (where the piece wants to move)
  */
     void makeMove(int fromRow, int fromCol, int toRow, int toCol);
+    /**
+     * Gets all the valid moves and creates a vector of all the moves.
+     * @param turn
+     * @return
+     */
+    std::vector<Move> getAllValidMoves(bool turn);
+    /**
+     * Evaluate all the moves based on depth that the user choose.
+     * @param depth
+     */
+    void evaluateAllMoves(int depth);
+    /**
+     *
+     * @param count
+     * @param depth
+     * @return a vector of the top moves using PriorityQueue
+     */
+    std::vector<Move> getTopMoves(int count, int depth);
 
 };
 
