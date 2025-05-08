@@ -18,6 +18,7 @@ protected:
     bool isWhite;
     int col;
     int row;
+    int value;
 
 public:
     /**
@@ -37,7 +38,11 @@ public:
     int getRow() const ;
     void setCol(int col);
     void setRow(int row);
-    virtual bool isValidMove( int toRow, int toCol) = 0;
+    virtual bool isValidMove(int toRow, int toCol) const = 0;
+    int getValue() const ;
+    virtual bool canAttack(int toRow, int toCol) const {
+        return isValidMove(toRow, toCol);
+    }
 
 };
 

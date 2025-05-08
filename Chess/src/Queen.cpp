@@ -3,9 +3,11 @@
 //
 
 #include "../include/Queen.h"
-Queen::Queen(bool isWhite, char symbol, int col, int row) : Piece(isWhite, symbol, col, row) {}
+Queen::Queen(bool isWhite, char symbol, int col, int row) : Piece(isWhite, symbol, col, row) {
+    value = 9;
+}
 
-bool Queen::isValidMove( int toRow, int toCol) {
+bool Queen::isValidMove( int toRow, int toCol) const {
     if (abs(getRow() - toRow) == abs(getCol() - toCol)) {
         return true;}
     if ((getCol() == toCol || getRow() == toRow)){

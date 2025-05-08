@@ -17,7 +17,7 @@ if (MSVC)
     add_compile_options (/W4 /permissive- /Zc:externConstexpr /Zc:inline)
 endif ()
 
-add_executable (Chess ""
+add_executable (Chess
         src/Piece.cpp
         include/Piece.h
         src/Board.cpp
@@ -34,6 +34,8 @@ add_executable (Chess ""
         include/Knight.h
         src/Pawn.cpp
         include/Pawn.h
+        src/main.cpp
+        include/MyExceptions.h
 )
 
 

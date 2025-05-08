@@ -3,9 +3,11 @@
 //
 
 #include "../include/Knight.h"
-Knight::Knight(bool isWhite, char symbol, int col, int row) : Piece(isWhite, symbol, col, row) {}
+Knight::Knight(bool isWhite, char symbol, int col, int row) : Piece(isWhite, symbol, col, row) {
+    value = 3;
+}
 
-bool Knight::isValidMove(int toRow, int toCol) {
+bool Knight::isValidMove(int toRow, int toCol) const{
     int rowDiff = abs(getRow() - toRow);
     int colDiff = abs(getCol() - toCol);
 

@@ -1,4 +1,4 @@
-#include "Chess.h"
+#include "../include/Chess.h"
 #include <iostream>
 #include <string>
 
@@ -178,7 +178,7 @@ void Chess::show() const
 // clear screen and print the board and the relevant msg 
 void Chess::displayBoard() const
 {
-	clear();
+//	clear();
 	show();
 	cout << m_msg<< m_errorMsg;
 	
