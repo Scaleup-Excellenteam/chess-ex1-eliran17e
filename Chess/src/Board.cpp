@@ -375,7 +375,7 @@ double Board::evaluateMove(const Move& move, int depth) {
     return copy.evaluateMoveInternal(move, depth);
 }
 
-// FIXED: Proper board state management in recursive evaluation
+
 double Board::evaluateMoveInternal(const Move& move, int depth) {
     bool isWhite = whiteTurn;
     Piece* attacker = chessBoard[move.fromRow][move.fromCol];
@@ -481,7 +481,7 @@ double Board::evaluateMoveInternal(const Move& move, int depth) {
         whiteTurn = !whiteTurn; // Restore turn
     }
 
-    // FIXED: Restore the board state properly
+  
     chessBoard[move.fromRow][move.fromCol] = attacker;
     chessBoard[move.toRow][move.toCol] = capturedPiece;
     attacker->setRow(move.fromRow);
@@ -660,7 +660,7 @@ void Board::dumpBoard() {
     std::cout << "  1 2 3 4 5 6 7 8\n";
 }
 
-// FIXED: Completely rewritten multithreaded function
+
 std::vector<Move> Board::getTopMovesMultithreaded(int count, int depth, int numThreads) {
     // First get all valid moves
     std::vector<Move> allMoves = getAllValidMoves(whiteTurn);
