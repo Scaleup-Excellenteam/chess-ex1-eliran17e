@@ -1,40 +1,33 @@
-README.txt - Chess Top Move Evaluation System
-Project Summary:
-This program implements a simplified chess AI that evaluates and ranks the top N legal moves
-from a given board state. It uses a scoring algorithm to assess moves based on material gain,
-positional advantages, safety, and threats, and returns the best options to the player.
+Overview:
+This project is a basic chess engine that suggests the best moves using AI logic.
+It supports both manual play and autoplay modes.
+You can adjust the AI's depth and choose whether to use multithreading to improve performance.
 
-Top Move Evaluation (getTopMoves):
-The function `getTopMoves(int count, int depth)` returns the best 'count' moves using a recursive
-evaluation function with the given 'depth' (like a mini minimax that we did in python).
+Features:
+Calculates and suggests the top moves based on:
+Piece captures and material gain
+Positional advantages (center control, protection, threats)
+Safety and favorable trades
+Opponent's possible replies (up to a given depth)
+Supports autoplay mode, where the AI plays both sides by randomly choosing from the top 5 best moves.
+Uses multithreading (optional) for faster move evaluations.
 
-Key components of the scoring:
-- Material gain (capturing enemy pieces)
-- Favorable trades (even small-value trades are rewarded if safe)
-- Center control (bonuses for controlling central squares)
-- Safety (penalties for unsafe or unprotected squares)
-- Threat evaluation (bonus for threatening unprotected valuable enemy pieces)
-- Protection bonus (for guarding allied pieces under attack)
-- Depth-based opponent replies (simulated recursively with penalty for strong replies)
+How It Works:
+The user inputs:
+AI depth (how many future moves to look ahead)
+Number of threads (0 = single-threaded)
+Mode: Manual play or Autoplay
+In Manual mode, you play moves yourself and the AI gives suggestions.
+In Autoplay, the AI plays 8 moves automatically, showing the board after each.
 
-The system uses a custom `PriorityQueue` to track and return the best N moves sorted by score.
-- push() works on O(n)
-- poll() works on (1)
+Error Handling:
+Custom exceptions (MyExceptions) are used for:
+Invalid board setups
+Illegal moves
+No moves available
+Empty priority queues
+Errors are shown without crashing the program.
 
-Runtime:
-- Algorithem run time will be O(Moves^depth) since inside the evaluation moves
-- I use for loops but I run on 8x8 (64)
-- Depth 1 fast, shallow evaluation
-- Depth 2 reasonable accuracy and still fast
-- Each extra depth increases time exponentially (due to recursion and branching)
-
-Exceptions:
-A custom exception class `MyExceptions` is used throughout the program to handle logical errors such as:
-- Invalid board setup (e.g., not 64 characters)
-- Polling from an empty priority queue
-- No legal moves available (checkmate/stalemate)
-- Invalid piece movement or board conditions
-
-All exceptions print helpful error messages and do not crash the program.
-
-Algo
+Performance Notes:
+The deeper the depth, the more accurate but slower the evaluation.
+Runtime grows roughly like O(moves^depth).
