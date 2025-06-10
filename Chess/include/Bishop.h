@@ -5,6 +5,7 @@
 #ifndef CHESS_BISHOP_H
 #define CHESS_BISHOP_H
 #include "Piece.h"
+#include "Board.h"
 
 class Bishop: public Piece {
 
@@ -18,6 +19,7 @@ public:
  */
     bool isValidMove( int toRow, int toCol) const override;
     Piece* clone() const override { return new Bishop(*this); }
+    bool canAttack(int toRow, int toCol, const Board& board) const;
 
 };
 

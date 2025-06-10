@@ -38,10 +38,11 @@ public:
 	Chess(const string& start = "RNBQKBNRPPPPPPPP################################pppppppprnbqkbnr");
 	Chess(const Chess&)=delete;
 	Chess& operator=(const Chess&) = delete;
-	string getInput();
+	string getInput(const string& aiInput = "");
 	void setCodeResponse(int codeResponse);
     void setInput(const std::string& input);
     void excute();
     void displayBoard() const;
     void updateFromBoard(const Board& b);
+    void applyMove(const Move& move);
 };

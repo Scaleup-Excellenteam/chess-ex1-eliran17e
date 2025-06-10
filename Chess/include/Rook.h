@@ -8,7 +8,7 @@
 
 
 #include "Piece.h"
-
+#include "Board.h"
 class Rook : public Piece {
 public:
     Rook(bool isWhite, char symbol, int col, int row);
@@ -20,6 +20,7 @@ public:
      */
     bool isValidMove( int toRow, int toCol)const override;
     Piece* clone() const override { return new Rook(*this); }
+    bool canAttack(int toRow, int toCol, const Board& board) const override;
 };
 
 

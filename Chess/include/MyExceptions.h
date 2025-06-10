@@ -22,6 +22,7 @@ public:
     explicit MyExceptions(const std::string& msg)
             : message("Error: " + msg) {}
 
+
     // Override what() to return the message
     const char* what() const noexcept override {
         return message.c_str();

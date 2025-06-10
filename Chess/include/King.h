@@ -5,6 +5,7 @@
 #ifndef CHESS_KING_H
 #define CHESS_KING_H
 #include "Piece.h"
+#include "Board.h"
 
 class King: public Piece {
 public:
@@ -17,6 +18,7 @@ public:
      */
     bool isValidMove( int toRow, int toCol) const override;
     Piece* clone() const override { return new King(*this); }
+    bool canAttack(int toRow, int toCol, const Board& board) const override;
 
 };
 

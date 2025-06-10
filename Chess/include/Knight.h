@@ -5,7 +5,7 @@
 #ifndef CHESS_KNIGHT_H
 #define CHESS_KNIGHT_H
 #include "Piece.h"
-
+#include "Board.h"
 class Knight: public Piece {
 public:
     Knight(bool isWhite, char symbol, int col, int row);
@@ -17,6 +17,7 @@ public:
      */
     bool isValidMove( int toRow, int toCol) const override;
     Piece* clone() const override { return new Knight(*this); }
+    bool canAttack(int toRow, int toCol, const Board& board) const override;
 
 };
 

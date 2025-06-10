@@ -5,7 +5,7 @@
 #ifndef CHESS_PAWN_H
 #define CHESS_PAWN_H
 #include "Piece.h"
-
+#include "Board.h"
 class Pawn: public Piece {
 public:
     Pawn(bool isWhite, char symbol, int col, int row);
@@ -16,7 +16,7 @@ public:
      * @return if the move is valid
      */
     bool isValidMove( int toRow, int toCol) const override;
-    bool canAttack(int toRow, int toCol) const override;
+    bool canAttack(int toRow, int toCol, const Board& board) const override;
     Piece* clone() const override { return new Pawn(*this); }
 };
 
