@@ -1,40 +1,70 @@
-// Chess 
-#include "Chess.h"
+#include "../include/GameRunner.h"
 
-int main()
-{
-	string board = "RNBQKBNRPPPPPPPP################################pppppppprnbqkbnr"; 
-//	string board = "##########K###############################R#############r#r#####";
-	Chess a(board);
-	int codeResponse = 0;
-	string res = a.getInput();
-	while (res != "exit")
-	{
-		/* 
-		codeResponse value : 
-		Illegal movements : 
-		11 - there is not piece at the source  
-		12 - the piece in the source is piece of your opponent
-		13 - there one of your pieces at the destination 
-		21 - illegal movement of that piece 
-		31 - this movement will cause you checkmate
+int main() {
+    const int MAX_DEPTH = 6;
+    const int MAX_THREADS = 8;
 
-		legal movements : 
-		41 - the last movement was legal and cause check 
-		42 - the last movement was legal, next turn 
-		*/
+    int depth = 0;
+    std::cout << "Enter AI depth (1-" << MAX_DEPTH << "): ";
+    std::cin >> depth;
+    while (std::cin.fail() || depth < 1 || depth > MAX_DEPTH) {
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        std::cout << "Please enter a valid depth (1-" << MAX_DEPTH << "): ";
+        std::cin >> depth;
+    }
 
-		/**/ 
-		{ // put your code here instead that code
-			cout << "code response >> ";
-			cin >> codeResponse;
-		}
-		/**/
+    int threadCount = 0;
+    std::cout << "Enter number of threads (0-" << MAX_THREADS << "): ";
+    std::cin >> threadCount;
+    while (std::cin.fail() || threadCount < 0 || threadCount > MAX_THREADS) {
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        std::cout << "Please enter 0-" << MAX_THREADS << " threads: ";
+        std::cin >> threadCount;
+    }
 
-		a.setCodeResponse(codeResponse);
-		res = a.getInput(); 
-	}
+    int mode = 0;
+    std::cout << "Choose mode:\n"
+                 " 0 = Manual\n"
+                 " 1 = Autoplay\n"
+                 " 2 = Play vs AI\n"
+                 "Enter mode number: ";
+    std::cin >> mode;
+    while (std::cin.fail() || mode < 0 || mode > 2) {
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        std::cout << "Enter a valid mode number (0, 1, or 2): ";
+        std::cin >> mode;
+    }
 
-	cout << endl << "Exiting " << endl; 
-	return 0;
+    int moves = 0;
+    if (mode == 1) {
+        std::cout << "Enter number moves to autoplay (1-1000): ";
+        std::cin >> moves;
+        while (std::cin.fail() || moves < 1 || moves > 1000) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            std::cout << "Enter a valid number of moves (1-1000): ";
+            std::cin >> moves;
+        }
+    }
+    GameRunner runner;
+
+    switch (mode) {
+        case 0:
+            runner.runManual(depth, threadCount);
+            break;
+        case 1:
+            runner.runAutoplay(depth, threadCount, moves); // or ask user how many moves
+            break;
+        case 2:
+            runner.runVsComputer(depth, threadCount);
+            break;
+        default:
+            std::cerr << "Invalid mode selected.\n";
+            return 1;
+    }
+
+    return 0;
 }
