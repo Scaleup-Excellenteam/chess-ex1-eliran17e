@@ -4,7 +4,7 @@
 
 #include "../include/Pawn.h"
 Pawn::Pawn(bool isWhite, char symbol, int col, int row) : Piece(isWhite, symbol, col, row) {
-    value = 1;
+    value = 1.0;
 }
 
 bool Pawn::isValidMove( int toRow, int toCol) const {
@@ -27,7 +27,7 @@ bool Pawn::isValidMove( int toRow, int toCol) const {
 
     return false;
 }
-bool Pawn::canAttack(int toRow, int toCol) const {
+bool Pawn::canAttack(int toRow, int toCol, const Board& board) const { // Note: now accepts board parameter
     int direction = isWhite ? 1 : -1;
     return abs(getCol() - toCol) == 1 && getRow() + direction == toRow;
 }

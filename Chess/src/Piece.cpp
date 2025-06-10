@@ -10,22 +10,20 @@ Piece::Piece(bool isWhite, char symbol, int col, int row)
 
 
 Piece::Piece(const Piece& other)
-        : isWhite(other.isWhite), symbol(other.symbol), col(other.col), row(other.row) {}
+        : isWhite(other.isWhite), symbol(other.symbol), col(other.col), row(other.row), value(other.value) {}
 
 Piece& Piece::operator=(const Piece& other) {
     if (this == &other) {
-        return *this; // Handle self-assignment
+        return *this;
     }
-
-    // Copy the data members
     this->symbol = other.symbol;
     this->isWhite = other.isWhite;
     this->col = other.col;
     this->row = other.row;
-
+    this->value = other.value;  // <-- ADD THIS LINE!
     return *this;
 }
-int Piece::getValue() const {
+double Piece::getValue() const {
     return value;
 }
 
