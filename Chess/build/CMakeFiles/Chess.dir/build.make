@@ -195,10 +195,38 @@ CMakeFiles/Chess.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Chess.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/main.cpp -o CMakeFiles/Chess.dir/src/main.cpp.s
 
+CMakeFiles/Chess.dir/src/AIEngine.cpp.o: CMakeFiles/Chess.dir/flags.make
+CMakeFiles/Chess.dir/src/AIEngine.cpp.o: /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/AIEngine.cpp
+CMakeFiles/Chess.dir/src/AIEngine.cpp.o: CMakeFiles/Chess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Chess.dir/src/AIEngine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Chess.dir/src/AIEngine.cpp.o -MF CMakeFiles/Chess.dir/src/AIEngine.cpp.o.d -o CMakeFiles/Chess.dir/src/AIEngine.cpp.o -c /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/AIEngine.cpp
+
+CMakeFiles/Chess.dir/src/AIEngine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Chess.dir/src/AIEngine.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/AIEngine.cpp > CMakeFiles/Chess.dir/src/AIEngine.cpp.i
+
+CMakeFiles/Chess.dir/src/AIEngine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Chess.dir/src/AIEngine.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/AIEngine.cpp -o CMakeFiles/Chess.dir/src/AIEngine.cpp.s
+
+CMakeFiles/Chess.dir/src/GameRunner.cpp.o: CMakeFiles/Chess.dir/flags.make
+CMakeFiles/Chess.dir/src/GameRunner.cpp.o: /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/GameRunner.cpp
+CMakeFiles/Chess.dir/src/GameRunner.cpp.o: CMakeFiles/Chess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Chess.dir/src/GameRunner.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Chess.dir/src/GameRunner.cpp.o -MF CMakeFiles/Chess.dir/src/GameRunner.cpp.o.d -o CMakeFiles/Chess.dir/src/GameRunner.cpp.o -c /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/GameRunner.cpp
+
+CMakeFiles/Chess.dir/src/GameRunner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Chess.dir/src/GameRunner.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/GameRunner.cpp > CMakeFiles/Chess.dir/src/GameRunner.cpp.i
+
+CMakeFiles/Chess.dir/src/GameRunner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Chess.dir/src/GameRunner.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/GameRunner.cpp -o CMakeFiles/Chess.dir/src/GameRunner.cpp.s
+
 CMakeFiles/Chess.dir/src/Chess.cpp.o: CMakeFiles/Chess.dir/flags.make
 CMakeFiles/Chess.dir/src/Chess.cpp.o: /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/Chess.cpp
 CMakeFiles/Chess.dir/src/Chess.cpp.o: CMakeFiles/Chess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Chess.dir/src/Chess.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Chess.dir/src/Chess.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Chess.dir/src/Chess.cpp.o -MF CMakeFiles/Chess.dir/src/Chess.cpp.o.d -o CMakeFiles/Chess.dir/src/Chess.cpp.o -c /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/Chess.cpp
 
 CMakeFiles/Chess.dir/src/Chess.cpp.i: cmake_force
@@ -220,6 +248,8 @@ Chess_OBJECTS = \
 "CMakeFiles/Chess.dir/src/Knight.cpp.o" \
 "CMakeFiles/Chess.dir/src/Pawn.cpp.o" \
 "CMakeFiles/Chess.dir/src/main.cpp.o" \
+"CMakeFiles/Chess.dir/src/AIEngine.cpp.o" \
+"CMakeFiles/Chess.dir/src/GameRunner.cpp.o" \
 "CMakeFiles/Chess.dir/src/Chess.cpp.o"
 
 # External object files for target Chess
@@ -234,10 +264,12 @@ Chess: CMakeFiles/Chess.dir/src/King.cpp.o
 Chess: CMakeFiles/Chess.dir/src/Knight.cpp.o
 Chess: CMakeFiles/Chess.dir/src/Pawn.cpp.o
 Chess: CMakeFiles/Chess.dir/src/main.cpp.o
+Chess: CMakeFiles/Chess.dir/src/AIEngine.cpp.o
+Chess: CMakeFiles/Chess.dir/src/GameRunner.cpp.o
 Chess: CMakeFiles/Chess.dir/src/Chess.cpp.o
 Chess: CMakeFiles/Chess.dir/build.make
 Chess: CMakeFiles/Chess.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Chess"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Chess"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Chess.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

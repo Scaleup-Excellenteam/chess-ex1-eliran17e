@@ -163,4 +163,10 @@ CMakeFiles/Chess.dir/src/Chess.cpp.o: \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
  /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/../include/Pawn.h \
+ /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/bits/node_handle.h \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
+ /usr/include/c++/13/bits/erase_if.h \
  /mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/include/Board.h

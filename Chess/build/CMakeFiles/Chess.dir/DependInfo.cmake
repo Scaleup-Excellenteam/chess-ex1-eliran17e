@@ -8,9 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/AIEngine.cpp" "CMakeFiles/Chess.dir/src/AIEngine.cpp.o" "gcc" "CMakeFiles/Chess.dir/src/AIEngine.cpp.o.d"
   "/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/Bishop.cpp" "CMakeFiles/Chess.dir/src/Bishop.cpp.o" "gcc" "CMakeFiles/Chess.dir/src/Bishop.cpp.o.d"
   "/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/Board.cpp" "CMakeFiles/Chess.dir/src/Board.cpp.o" "gcc" "CMakeFiles/Chess.dir/src/Board.cpp.o.d"
   "/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/Chess.cpp" "CMakeFiles/Chess.dir/src/Chess.cpp.o" "gcc" "CMakeFiles/Chess.dir/src/Chess.cpp.o.d"
+  "/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/GameRunner.cpp" "CMakeFiles/Chess.dir/src/GameRunner.cpp.o" "gcc" "CMakeFiles/Chess.dir/src/GameRunner.cpp.o.d"
   "/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/King.cpp" "CMakeFiles/Chess.dir/src/King.cpp.o" "gcc" "CMakeFiles/Chess.dir/src/King.cpp.o.d"
   "/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/Knight.cpp" "CMakeFiles/Chess.dir/src/Knight.cpp.o" "gcc" "CMakeFiles/Chess.dir/src/Knight.cpp.o.d"
   "/mnt/c/Users/User/homework1CPP/chess-ex1-eliran17e/Chess/src/Pawn.cpp" "CMakeFiles/Chess.dir/src/Pawn.cpp.o" "gcc" "CMakeFiles/Chess.dir/src/Pawn.cpp.o.d"

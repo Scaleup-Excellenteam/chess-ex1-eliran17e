@@ -129,6 +129,30 @@ Chess/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/build
 .PHONY : Chess/fast
 
+src/AIEngine.o: src/AIEngine.cpp.o
+.PHONY : src/AIEngine.o
+
+# target to build an object file
+src/AIEngine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/src/AIEngine.cpp.o
+.PHONY : src/AIEngine.cpp.o
+
+src/AIEngine.i: src/AIEngine.cpp.i
+.PHONY : src/AIEngine.i
+
+# target to preprocess a source file
+src/AIEngine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/src/AIEngine.cpp.i
+.PHONY : src/AIEngine.cpp.i
+
+src/AIEngine.s: src/AIEngine.cpp.s
+.PHONY : src/AIEngine.s
+
+# target to generate assembly for a file
+src/AIEngine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/src/AIEngine.cpp.s
+.PHONY : src/AIEngine.cpp.s
+
 src/Bishop.o: src/Bishop.cpp.o
 .PHONY : src/Bishop.o
 
@@ -200,6 +224,30 @@ src/Chess.s: src/Chess.cpp.s
 src/Chess.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/src/Chess.cpp.s
 .PHONY : src/Chess.cpp.s
+
+src/GameRunner.o: src/GameRunner.cpp.o
+.PHONY : src/GameRunner.o
+
+# target to build an object file
+src/GameRunner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/src/GameRunner.cpp.o
+.PHONY : src/GameRunner.cpp.o
+
+src/GameRunner.i: src/GameRunner.cpp.i
+.PHONY : src/GameRunner.i
+
+# target to preprocess a source file
+src/GameRunner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/src/GameRunner.cpp.i
+.PHONY : src/GameRunner.cpp.i
+
+src/GameRunner.s: src/GameRunner.cpp.s
+.PHONY : src/GameRunner.s
+
+# target to generate assembly for a file
+src/GameRunner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/src/GameRunner.cpp.s
+.PHONY : src/GameRunner.cpp.s
 
 src/King.o: src/King.cpp.o
 .PHONY : src/King.o
@@ -378,6 +426,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Chess"
+	@echo "... src/AIEngine.o"
+	@echo "... src/AIEngine.i"
+	@echo "... src/AIEngine.s"
 	@echo "... src/Bishop.o"
 	@echo "... src/Bishop.i"
 	@echo "... src/Bishop.s"
@@ -387,6 +438,9 @@ help:
 	@echo "... src/Chess.o"
 	@echo "... src/Chess.i"
 	@echo "... src/Chess.s"
+	@echo "... src/GameRunner.o"
+	@echo "... src/GameRunner.i"
+	@echo "... src/GameRunner.s"
 	@echo "... src/King.o"
 	@echo "... src/King.i"
 	@echo "... src/King.s"
