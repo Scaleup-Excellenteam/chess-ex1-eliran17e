@@ -258,14 +258,14 @@ void Chess::doTurn()
 	}
 	case 41:
 	{
-		excute();
+
 		m_turn = !m_turn;
 		m_msg = "the last movement was legal and cause check \n";
 		break;
 	}
 	case 42:
 	{
-		excute();
+
 		m_turn = !m_turn;
 		m_msg = "the last movement was legal \n";
 		break;
@@ -282,7 +282,7 @@ Chess::Chess(const string& start)
 }
 
 // get the source and destination 
-string Chess::getInput()
+string Chess::getInput(const string& aiInput)
 {
 	static bool isFirst = true;
 
@@ -293,8 +293,13 @@ string Chess::getInput()
 
 	displayBoard();
 	showAskInput();
+    if (aiInput==""){
+        cin >> m_input;
+    }
+    else{
+        m_input = aiInput;
+    }
 
-	cin >> m_input;
 	if (isExit())
 		return "exit";
 	while (!isValid() || isSame())
@@ -336,3 +341,11 @@ void Chess::updateFromBoard(const Board& b) {
     m_boardString = b.toString();
     setPieces();  // redraw the pieces from the new string
 }
+//void Chess::applyMove(const Move& move) {
+//    int srcIdx = move.fromRow * 8 + move.fromCol;
+//    int dstIdx = move.toRow * 8 + move.toCol;
+//    char piece = m_boardString[srcIdx];
+//    m_boardString[srcIdx] = '#';
+//    m_boardString[dstIdx] = piece;
+//    setPieces();  // redraw
+//}
